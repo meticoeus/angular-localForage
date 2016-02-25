@@ -134,7 +134,7 @@ describe('Module: LocalForageModule', function() {
         res.push(key);
       }).then(function() {
         stopDigests(interval);
-        expect(res.length).toEqual(3);
+        expect(res.length).toEqual(4); // would be 3 but lru is adding 1 key to track cache removal
         done();
       }, done);
     });

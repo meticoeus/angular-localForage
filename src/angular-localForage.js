@@ -3,15 +3,15 @@
 
   var angular = root.angular || (window && window.angular);
   if(typeof define === 'function' && define.amd) {                    // AMD
-    define(['localforage'], function(localforage) {
-      factory(angular, localforage);
+    define(['localforagelru'], function(localforagelru) {
+      factory(angular, localforagelru);
     });
   } else if(typeof exports === 'object' || typeof global === 'object') {
-    module.exports = factory(angular, require('localforage')); // Node/Browserify
+    module.exports = factory(angular, require('localforagelru')); // Node/Browserify
   } else {
-    return factory(angular, root.localforage);                        // Browser
+    return factory(angular, root.localforagelru);                        // Browser
   }
-})(this, function(angular, localforage, undefined) {
+})(this, function(angular, localforagelru, undefined) {
   'use strict';
 
   var angularLocalForage = angular.module('LocalForageModule', ['ng']);
@@ -45,10 +45,10 @@
     this.$get = ['$rootScope', '$q', '$parse', function($rootScope, $q, $parse) {
       var LocalForageInstance = function LocalForageInstance(params) {
         if(angular.isDefined(params)) {
-          this._localforage = localforage.createInstance(params);
+          this._localforage = localforagelru.createInstance(params);
         } else {
-          this._localforage = localforage;
-          localforage.config(defaultConfig);
+          this._localforage = localforagelru;
+          localforagelru.config(defaultConfig);
         }
       };
 

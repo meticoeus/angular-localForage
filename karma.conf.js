@@ -70,6 +70,7 @@ module.exports.conf = {
     'bower_components/angular/angular.js',
     'bower_components/angular-mocks/angular-mocks.js',
     'bower_components/localforage/dist/localforage.js',
+    'bower_components/localforagelru/src/localforagelru.js',
     'src/angular-localForage.js',
     'tests/angular-localForage.js'
   ],
